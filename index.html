@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEDECTI</title>
     <style>
+
+.footer-info {
+    font-size: 0.8rem; /* Fonte pequena para discrição */
+    color: rgba(140, 40, 250, 0.7); /* Cor magenta com 70% de opacidade */
+    text-align: right; /* Alinha o texto à direita */
+    padding: 10px 20px; /* Adiciona um preenchimento para não colar na borda */
+    margin-top: 20px; /* Adiciona um espaço acima do elemento */
+    /* Remove as propriedades 'position', 'bottom', 'left', 'transform' para não ser fixo */
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 768px) {
+    .footer-info {
+        font-size: 0.65rem; /* Fonte ainda menor em telas pequenas */
+        padding: 5px 10px; /* Ajusta o preenchimento */
+        text-align: rigt; /* Centraliza em telas muito pequenas, se preferir */
+    }
+}
+
+
         /* Estilos CSS */
         * {
             margin: 0;
@@ -20,7 +40,7 @@
         }
 
         .container {
-            max-width: 96%;
+            max-width: 99%;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
@@ -34818,5 +34838,10 @@
             app.init();
         });
     </script>
+
+<div class="footer-info">
+    Versão 0  (14 Julho de 2025)
+</div>
+
 </body>
 </html>
