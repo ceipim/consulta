@@ -34613,12 +34613,79 @@
         });
     </script>
 
+
+
+<style>
+    #popupAviso {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        z-index: 9999;
+    }
+
+    #popupAviso .conteudo {
+        background: white;
+        padding: 20px;
+        width: 320px;
+        margin: 15% auto;
+        border-radius: 10px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 20px; /* Aumenta a fonte geral */
+        position: relative;
+    }
+
+    #popupAviso .icone {
+        font-size: 64px;
+        color: #e67e22;
+        margin-bottom: 10px;
+    }
+
+    #popupAviso h3 {
+        margin-bottom: 3em; /* espaço maior = 3 vezes a altura da fonte, equivale a 2 linhas */
+    }
+
+    #popupAviso button {
+        padding: 8px 15px;
+        font-size: 16px; /* botão maior */
+        cursor: pointer;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+</style>
+
+<div id="popupAviso">
+    <div class="conteudo">
+        <div class="icone">⚠️</div>
+        <h3>Atenção</h3>
+        <p>Este site (consulta) estará disponível somente até o dia <strong>25</strong>.</p>
+        <button onclick="document.getElementById('popupAviso').style.display='none'">Ok</button>
+    </div>
+</div>
+
+<script>
+    window.onload = function() {
+        document.getElementById('popupAviso').style.display = 'block';
+    }
+</script>
+
+
+  
+
+  
 <div class="footer-info">
-    Release 12   (12 de agosto de 2025 13:15h)
+    Release 13   (12 de agosto de 2025 14:45h)
 </div>
 
 </body>
 </html>
+
 
 
 
