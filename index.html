@@ -34873,79 +34873,98 @@
 
 
 
-<style>
+
+
+  <style>
+    /* O Fundo Escuro (Overlay) */
     #popupAviso {
-        display: none;
-        position: fixed;
+        display: none; /* Começa escondido por padrão */
+        position: fixed; /* Fica fixo na tela, mesmo com rolagem */
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.6);
-        z-index: 9999;
+        background-color: rgba(0, 0, 0, 0.6); /* Fundo preto semi-transparente */
+        z-index: 10000; /* Garante que fique na frente de tudo */
+
+        /* Usando Flexbox para centralizar o conteúdo facilmente */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    #popupAviso .conteudo {
+    /* A Caixa Branca do Aviso */
+    .popup-conteudo {
         background: white;
-        padding: 20px;
-        width: 420px;
-        margin: 15% auto;
+        padding: 30px;
+        width: 90%;
+        max-width: 450px; /* Limita a largura em telas grandes */
         border-radius: 10px;
         text-align: center;
         font-family: Arial, sans-serif;
-        font-size: 20px;
-        position: relative;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para dar profundidade */
     }
 
-    #popupAviso .icone {
-        font-size: 64px;
-        color: #e67e22;
-        margin-bottom: 10px;
+    /* O Ícone de Alerta */
+    .popup-icone {
+        font-size: 50px;
+        color: #f0ad4e; /* Laranja/Amarelo do alerta */
+        margin-bottom: 15px;
     }
 
-    #popupAviso h3 {
-        margin-bottom: 3em;
+    /* O Título "AVISO IMPORTANTE!" */
+    .popup-titulo {
+        color: #c9302c; /* Vermelho escuro */
+        text-transform: uppercase;
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 20px;
     }
 
-    
-  }
-
-        #popupAviso h3 {
-            color: #8B0000; /* Vermelho escuro */
-            text-transform: uppercase; /* Texto em caixa alta */
-            margin-bottom: 20px; /* Espaço reduzido */
-            font-size: 25px;
-
-  
-    /* Espaço entre o texto do aviso e o botão */
-    #popupAviso p {
-        margin-bottom: 1.5em;
+    /* O Texto do Aviso */
+    .popup-texto {
+        font-size: 18px;
+        color: #333; /* Cinza escuro */
+        margin-bottom: 25px;
     }
 
-    #popupAviso button {
-        padding: 8px 15px;
+    /* O Botão "Ok" */
+    .popup-botao {
+        padding: 12px 25px; /* Aumenta o tamanho do botão */
         font-size: 16px;
-        cursor: pointer;
-        background: #3498db;
+        font-weight: bold;
         color: white;
+        background-color: #3498db; /* Fundo azul */
         border: none;
         border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Efeito suave na transição */
+    }
+
+    /* Efeito ao passar o mouse sobre o botão */
+    .popup-botao:hover {
+        background-color: #2980b9; /* Azul um pouco mais escuro */
     }
 </style>
 
 <div id="popupAviso">
-    <div class="conteudo">
-        <div class="icone">⚠️</div>
-        <h3>AVISO IMPORTANTE!</h3>
-        <p>Este site estará disponível para consulta somente até o final do dia de <strong>HOJE</strong>.</p>
-        <button onclick="document.getElementById('popupAviso').style.display='none'">Ok</button>
+    <div class="popup-conteudo">
+        <div class="popup-icone">⚠️</div>
+        <h3 class="popup-titulo">AVISO IMPORTANTE!</h3>
+        <p class="popup-texto">Este site estará disponível para consulta somente até o final do dia de <strong>HOJE</strong>.</p>
+        <button class="popup-botao" onclick="document.getElementById('popupAviso').style.display='none'">Ok</button>
     </div>
 </div>
 
 <script>
-    window.onload = function() {
-        document.getElementById('popupAviso').style.display = 'block';
-    }
+    // Garante que o script rode apenas depois que a página carregar completamente
+    window.addEventListener('load', function() {
+        // Encontra o elemento do popup e muda seu 'display' para 'flex' para exibi-lo
+        var popup = document.getElementById('popupAviso');
+        if (popup) {
+            popup.style.display = 'flex';
+        }
+    });
 </script>
 
 
@@ -34954,11 +34973,12 @@
 
   
 <div class="footer-info">
-    Release 18   (15 de agosto de 2025 09:35h)
+    Release 19   (15 de agosto de 2025 10:15h)
 </div>
 
 </body>
 </html>
+
 
 
 
